@@ -1,0 +1,729 @@
+/* style.css */
+
+/* 1. Զրոյացնող Ոճեր (Reset) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+/* Ընդհանուր Ոճեր */
+body {
+    font-family: 'Georgia', serif; /* Ընդհանուր ֆոնտ */
+    line-height: 1.6;
+    color: #333; 
+    background-color: transparent; /* body-ի ֆոնը թողնում ենք թափանցիկ, որպեսզի երևա wrapper-ի նկարը */
+    font-size: 16px; 
+}
+
+/* 2. Wrapper - Ֆոնային Պատկեր */
+.wrapper {
+    width: 100%;
+    overflow-x: hidden; 
+    
+    /* ԲԵԳՐԱՈՒՆԴ ՖՈՏՈՅԻ ՈՃԵՐԸ */
+    background-image: url('./bg.jpg'); /* Խնդրում եմ հաստատել նկարի ճիշտ հասցեն */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Ֆոնը մնում է անշարժ */
+    background-position: center center; 
+    background-size: cover; 
+    min-height: 100vh; 
+}
+
+/* 3. Container - Կիսաթափանցիկ Ֆոն */
+.container {
+    max-width: 600px; 
+    width: 90%;
+    margin: 0 auto; 
+    padding: 20px; /* Ավելացնում ենք padding ներքին տարածքի համար */
+    text-align: center; 
+    
+    /* Կիսաթափանցիկ Ֆոն Տեքստի Ընթեռնելիության Համար */
+    background-color: rgba(255, 255, 255, 0.85); /* Կիսաթափանցիկ սպիտակ */
+    border-radius: 10px; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); 
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* 4. Բաժինների Ընդհանուր Ոճեր */
+.img-box,
+.running-numbers-box,
+.music,
+.text-for-invitation,
+.photo-slider-box,
+.planning-box,
+.dress-code-box,
+.demandes,
+.harcatertik {
+    padding: 30px 10px; /* Հորիզոնական padding նվազեցնում ենք container-ի ներսում */
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd; 
+}
+
+/* 5. Ռեսպոնսիվ Տիպոգրաֆիա (Օգտագործելով clamp()) */
+
+/* Վերնագրերի Ոճեր */
+h2, .title, .planning-title, .runing-numbers-title {
+    font-family: 'Georgia', serif; 
+    color: #a0522d; 
+    margin-bottom: 15px;
+    
+    /* Clamp: [1.5em (min), 6vw (ideal), 2.5em (max)] */
+    font-size: clamp(1.5em, 6vw, 2.5em); 
+    text-transform: uppercase;
+}
+
+/* Անունների Բաժին */
+.name-1, .name-2 {
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    
+    /* Clamp: [2em (min), 10vw (ideal), 3em (max)] */
+    font-size: clamp(2em, 10vw, 3em); 
+}
+
+.and {
+    color: #a0522d;
+    margin: 5px 0;
+    
+    /* Clamp: [1em (min), 4vw (ideal), 1.5em (max)] */
+    font-size: clamp(1em, 4vw, 1.5em);
+}
+
+/* Հիմնական տեքստի ոճերը */
+p {
+    font-size: clamp(1rem, 3.5vw, 1.15rem); /* Համոզվում ենք, որ պարբերությունները հեշտ ընթեռնելի են */
+}
+
+/* 6. Նկարների Ոճեր */
+.img-box img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%; 
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
+}
+
+
+/* սլայդ*/
+
+/* img-box-ի նախկին ոճերի փոխարեն */
+.img-box {
+    position: relative; /* Շատ կարևոր է, որպեսզի կոճակները ճիշտ դիրքավորվեն */
+    height: 60vh; /* Տալիս ենք հաստատուն բարձրություն, որպեսզի նկարը երևա */
+    width: 100%;
+    overflow: hidden; /* Թաքցնելու համար այն ամենը, ինչ դուրս է գալիս բոքսից */
+    
+    /* ՖՈՆԱՅԻՆ ՆԿԱՐԻ ՍԿԶԲՆԱԿԱՆ ՈՃԵՐԸ */
+    background-image: url('./couple-1.jpg'); /* Սկզբնական նկար */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Բովանդակության և կոճակների համար տարածք */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: background-image 0.5s ease;
+}
+
+/* Բովանդակության Ծածկույթը՝ ընթեռնելիության համար */
+.content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Կիսաթափանցիկ ծածկույթ, որպեսզի տեքստը լավ երևա */
+    background-color: rgba(0, 0, 0, 0.2); 
+    color: white; /* Տեքստը դարձնում ենք սպիտակ */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Կոճակների ոճերը */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.4);
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    z-index: 10; /* Ապահովում է, որ կոճակները լինեն վերևում */
+    border-radius: 50%; /* Կլոր կոճակներ */
+    transition: background-color 0.3s;
+}
+
+.slider-btn:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Փոխում ենք տեքստի գույնը սպիտակ ֆոնին համապատասխան */
+.content-overlay .name-1, 
+.content-overlay .name-2, 
+.content-overlay .and, 
+.content-overlay .title {
+    color: white !important; /* !important-ը երաշխավորում է, որ այս գույնը գերակայի */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Տալիս է փոքր ստվեր */
+}
+
+/* Համոզվում ենք, որ բոլոր p թեգերը նույնպես ստանում են գույնը */
+.content-overlay p {
+    color: white !important; 
+}
+
+
+
+/*-----------հետհաշվարկ------------------*/
+
+
+/* style.css-ի շարունակությունը */
+
+/* Countdown Տարածքի Կոնտեյներ */
+.countdown-timer {
+    display: flex;
+    justify-content: space-around; /* Հավասար տարածություն տարրերի միջև */
+    align-items: flex-start;
+    padding: 20px 0;
+    margin-top: 20px;
+    border: 2px solid #a0522d; /* Շրջանակ դնելու համար */
+    border-radius: 10px;
+    background-color: #fffaf0; /* Բաց ֆոն */
+}
+
+/* Ժամանակի Յուրաքանչյուր Բլոկ (Օր/Ժամ/Րոպե/Վրկ) */
+.time-unit {
+    display: flex;
+    flex-direction: column; /* Թիվը վերևում, պիտակը՝ ներքևում */
+    align-items: center;
+    text-align: center;
+    min-width: 60px; /* Փոքր էկրաններում տեղ ապահովելու համար */
+}
+
+/* Թվերի Ոճավորում */
+.countdown-timer .number {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #a0522d; /* Հիմնական գույն */
+    
+    /* Ռեսպոնսիվ չափս clamp-ի միջոցով */
+    /* Clamp: [2em (min), 8vw (ideal), 4em (max)] */
+    font-size: clamp(2em, 8vw, 4em); 
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+/* Պիտակների Ոճավորում */
+.countdown-timer .label {
+    font-size: clamp(0.7rem, 2.5vw, 1rem);
+    text-transform: uppercase;
+    color: #333;
+    opacity: 0.8;
+}
+
+/* Մեդիա Հարցում Շատ Փոքր Էկրանների Համար */
+@media (max-width: 350px) {
+    .countdown-timer {
+        flex-wrap: wrap; /* Թույլ է տալիս, որ բլոկները տեղափոխվեն նոր տող */
+    }
+    .time-unit {
+        margin: 10px 5px;
+    }
+}
+
+/* style.css-ի շարունակությունը */
+
+/* --- ԵՐԱԺՇՏՈՒԹՅԱՆ ԲԱԺԻՆ --- */
+.music {
+    padding: 15px 0;
+    border-bottom: none; /* Հանում ենք ներքևի գիծը, եթե կա */
+    text-align: center;
+}
+
+.music-toggle-btn {
+    background-color: #a0522d; /* Շագանակագույն ֆոն */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Կլորացված կոճակ */
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.music-toggle-btn:hover {
+    background-color: #8c4627;
+}
+
+.music-toggle-btn:active {
+    transform: scale(0.98);
+}
+
+.music-toggle-btn .hidden {
+    display: none;
+}
+
+
+
+/* style.css-ի շարունակությունը */
+
+/* --- ՕՐՎԱ ՊԼԱՆԱՎՈՐՄԱՆ ԲԱԺԻՆ (Planning Box) --- */
+/* style.css-ի ԹԱՐՄԱՑՎԱԾ մասը (Planning Box) */
+
+/* --- ՕՐՎԱ ՊԼԱՆԱՎՈՐՄԱՆ ԲԱԺԻՆ (Planning Box) --- */
+
+/* 1. Իրադարձության Բլոկ - Ուղղահայաց Flexbox */
+.event-time {
+    display: flex;
+    flex-direction: column; /* Փոփոխություն: Դարձնում ենք Ուղղահայաց */
+    align-items: center; /* Կենտրոնացնում ենք բոլոր տարրերը */
+    text-align: center; /* Կենտրոնացնում ենք տեքստը */
+    margin: 40px 0; 
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* 2. Նկարների Ոճավորում */
+.event-image {
+    width: 90%; /* Տալիս ենք ավելի մեծ լայնություն, բայց ռեսպոնսիվ */
+    max-width: 350px; /* Մաքսիմալ լայնություն */
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Տարածություն նկարի և տեքստի միջև */
+    /* Համոզվում ենք, որ այն նույնպես ստանում է scroll-reveal ոճերը */
+}
+
+/* 3. Տեքստի Դաշտ */
+.event-time .details {
+    width: 100%; /* Զբաղեցնում է ամբողջ լայնությունը */
+    padding: 0;
+    text-align: center; /* Կենտրոնացնում ենք տեքստը */
+}
+
+/* Հանում ենք հերթագայումը, քանի որ ամեն ինչ ուղղահայաց է */
+.restaurant {
+    flex-direction: column; 
+}
+
+/* Քարտեզի հղումը կենտրոնացնել */
+/* style.css-ի ԹԱՐՄԱՑՎԱԾ մասը */
+
+.map-link {
+    /* Հին ոճերի փոխարեն գրեք սա */
+    
+    display: inline-block; /* Կոճակի տեսք տալու համար */
+    margin-top: 15px; /* Տարածություն վերևից */
+    padding: 8px 20px;
+    
+    background-color: #5b7c8d; /* Նոր գույն (Օրինակ՝ սառը կապույտ/մոխրագույն) */
+    color: white; /* Սպիտակ տեքստ */
+    text-decoration: none;
+    font-weight: bold;
+    
+    border-radius: 25px; /* Կլորացված կոճակ */
+    border: 2px solid #5b7c8d; /* Շրջանակ */
+    
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    
+    transition: 
+        background-color 0.3s ease, 
+        color 0.3s ease, 
+        transform 0.1s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.map-link:hover {
+    background-color: white; 
+    color: #5b7c8d; /* Hover-ի ժամանակ գույները փոխվում են */
+    text-decoration: none;
+}
+
+.map-link:active {
+    transform: scale(0.98); /* Սեղմելու ժամանակ փոքր-ինչ սեղմվում է */
+}
+
+/* style.css ֆայլի վերջում */
+
+/* 1. Մեկնարկային Վիճակ (Թաքնված) */
+.scroll-reveal {
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: 
+        opacity 0.6s ease-out, 
+        transform 0.6s ease-out; 
+    transition-delay: 0.1s; 
+}
+
+/* 2. Ավարտական Վիճակ (Տեսանելի) */
+.scroll-reveal.revealed {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+
+
+
+/* style.css-ի շարունակությունը */
+
+/* --- ԴՐԵՍ-ԿՈԴԻ ԲԱԺԻՆ --- */
+
+.dress-code-box {
+    padding: 30px 20px;
+}
+
+.dress-code-title {
+    margin-bottom: 10px;
+}
+
+.dress-code-text {
+    margin-bottom: 25px;
+    color: #555;
+    font-size: clamp(1rem, 3.5vw, 1.15rem); 
+}
+
+/* Գունային Պալետ (Color Palette) */
+.color-palette {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.color-palette h3 {
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.color-swatch {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    cursor: help;
+}
+
+/* Գույների Սահմանում */
+.color-swatch.black { background-color: black; }
+.color-swatch.white { background-color: white; }
+.color-swatch.neon { 
+    background-image: linear-gradient(45deg, #ff00ff, #00ffff);
+    border: 2px solid #555;
+}
+
+/* Սլայդերների Ընդհանուր Ոճեր */
+.dress-slider {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* Սահմանափակում ենք նկարների չափը */
+    height: 400px; /* Տալիս ենք ֆիքսված բարձրություն */
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.dress-slider h3 {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 15px;
+    border-radius: 15px;
+    color: #a0522d;
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+}
+
+.slider-display {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease;
+}
+
+/* Կրկնօրինակում ենք նախորդ սլայդերի կոճակների ոճերը */
+.dress-slider .slider-btn {
+    top: 55%;
+    /* ... Կոճակների մնացած ոճերը գալիս են ընդհանուր .slider-btn դասից ... */
+}
+
+/* style.css-ի ԹԱՐՄԱՑՎԱԾ մասը */
+
+/* Կոճակների Ընդհանուր Ոճերը (Հիմնական Սլայդերի Կոճակներ) */
+.slider-btn {
+    position: absolute;
+    top: 50%; /* Կենտրոնացնում է ուղղահայաց */
+    transform: translateY(-50%); /* Ուղղում է կենտրոնացումը */
+    background: rgba(255, 255, 255, 0.4);
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    z-index: 10; 
+    border-radius: 50%; 
+    transition: background-color 0.3s;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* ԴՐԵՍ-ԿՈԴԻ ՍԼԱՅԴԵՐԻ ԿՈՃԱԿՆԵՐԻ ՈՃԵՐԸ */
+/* Քանի որ մենք օգտագործում ենք նույն դասերը, մենք ուղղակի պետք է հաստատենք դիրքը */
+.dress-slider .prev-btn-women,
+.dress-slider .next-btn-women,
+.dress-slider .prev-btn-man,
+.dress-slider .next-btn-man {
+    position: absolute;
+    top: 50%; /* Դնում ենք կենտրոնում */
+    transform: translateY(-50%); /* Ուղղում ենք կենտրոնացումը */
+    z-index: 11; /* Ավելի բարձր z-index, որպեսզի հայտնվեն */
+}
+
+/* Կոնկրետ Ձախ/Աջ դիրքերը դրես-կոդի սլայդերների համար */
+.dress-slider [class*="prev-btn-"] {
+    left: 10px;
+}
+
+.dress-slider [class*="next-btn-"] {
+    right: 10px;
+}
+
+
+/* style.css-ի շարունակությունը */
+
+/* --- ԽՆԴՐԱՆՔՆԵՐԻ ԲԱԺԻՆ (DEMANDES) --- */
+
+.demandes-title {
+    margin-bottom: 30px;
+}
+
+.demande-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Տարածություն բլոկների միջև */
+    padding: 0 10px;
+}
+
+.demande-item {
+    display: flex;
+    align-items: flex-start; /* Տարրերը սկսվում են վերևից */
+    background-color: #fffaf0; /* Բաց ֆոն */
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #a0522d; /* Գեղեցիկ գծիկ */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon-demande {
+    font-size: 2.5em; /* Պատկերակի մեծ չափս */
+    padding-right: 15px;
+    flex-shrink: 0; /* Չթողնել, որ պատկերակը փոքրանա */
+}
+
+.text-demande {
+    text-align: left;
+}
+
+.text-demande h3 {
+    font-size: clamp(1.1rem, 4vw, 1.3rem);
+    color: #a0522d;
+    margin-bottom: 5px;
+}
+
+.text-demande p {
+    font-size: clamp(0.9rem, 3vw, 1.05rem);
+    color: #444;
+    line-height: 1.5;
+}
+
+/* Ռեսպոնսիվություն փոքր էկրանների համար */
+@media (max-width: 450px) {
+    .demande-item {
+        flex-direction: column; /* Պատկերակը վերևում, տեքստը ներքևում */
+        align-items: center;
+        text-align: center;
+    }
+    .icon-demande {
+        padding-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+/* style.css-ի շարունակությունը */
+
+/* --- ՀԱՐՑԱԹԵՐԹԻԿԻ ԲԱԺԻՆ (RSVP) --- */
+
+.harcatertik {
+    padding: 30px 20px;
+}
+
+.harcatertik-title {
+    margin-bottom: 10px;
+}
+
+.rsvp-note {
+    font-size: clamp(1rem, 3.5vw, 1.15rem); 
+    color: #a0522d;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.rsvp-form {
+    text-align: left;
+    max-width: 450px; /* Ֆորմայի լայնության սահմանափակում */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+}
+
+/* Մուտքագրման Դաշտեր */
+.rsvp-form input[type="text"],
+.rsvp-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.rsvp-form input[type="text"]:focus,
+.rsvp-form textarea:focus {
+    border-color: #a0522d; /* Ֆոկուսի ժամանակ գույնի փոփոխություն */
+    outline: none;
+}
+
+/* Ռադիո Կոճակների Խումբ */
+.radio-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.radio-group label {
+    font-weight: normal;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Ուղարկելու Կոճակ (Submit Button) */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #a0522d;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: clamp(1rem, 4vw, 1.1rem);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 15px;
+}
+
+.submit-btn:hover {
+    background-color: #8c4627;
+}
+
+
+
+.main-footer {
+    width: 100%;
+    /* Ֆոնի գույնը նմանատիպ է հիմնական գույնին */
+    background-color: #a0522d; 
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    
+}
+
+.footer-content {
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.copyright, .designer-note {
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    margin: 5px 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.designer-note {
+    font-style: italic;
+    margin-top: 15px;
+}
+
+/* Սոցիալական Հղումներ */
+.social-links {
+    margin: 15px 0;
+}
+
+.social-icon {
+    display: inline-block;
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: transform 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Մեծանում է hover-ի ժամանակ */
+    color: #fffaf0; /* Բաց գույն */
+}

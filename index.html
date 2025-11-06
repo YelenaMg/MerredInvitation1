@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Հարսանիք</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="img-box">
+          <button class="slider-btn prev-btn">❮</button>
+          <button class="slider-btn next-btn">❯</button>
+
+          <div class="content-overlay">
+            <p class="name-1">Տիգրան</p>
+            <p class="and">և</p>
+            <p class="name-2">Անահիտ</p>
+            <h2 class="title">Ամուսնանում են</h2>
+          </div>
+        </div>
+        <div class="running-numbers-box">
+             
+          <h2 class="runing-numbers-title">Մեծ Օրվան Մնացել է</h2>
+
+          <div class="countdown-timer">
+            <div class="time-unit">
+              <span id="days" class="number">00</span>
+              <span class="label">Օր</span>
+            </div>
+
+            <div class="time-unit">
+              <span id="hours" class="number">00</span>
+              <span class="label">Ժամ</span>
+            </div>
+
+            <div class="time-unit">
+              <span id="minutes" class="number">00</span>
+              <span class="label">Րոպե</span>
+            </div>
+
+            <div class="time-unit">
+              <span id="seconds" class="number">00</span>
+              <span class="label">Վրկ.</span>
+            </div>
+          </div>
+        </div>
+        <div class="music scroll-reveal">
+          <audio id="wedding-music" src="./music.mp3" loop></audio>
+
+          <button id="music-toggle-btn" class="music-toggle-btn">
+            <span class="icon playing">🎶 Միացված է</span>
+            <span class="icon paused hidden">🔇 Անջատված է</span>
+          </button>
+        </div>
+
+        <div class="planning-box scroll-reveal">
+          <h2 class="planning-title">Օրվա Պլանը</h2>
+
+          <div class="event-time church">
+            <img
+              src="./church.jpg"
+              alt="Սուրբ Հովհաննես Մկրտիչ Եկեղեցի"
+              class="event-image scroll-reveal"
+            />
+
+            <div class="details">
+              <h3 class="event-name">Պսակադրություն</h3>
+              <p class="time-location">
+                Ժամը 17:00-ին, Սուրբ Հովհաննես Մկրտիչ Եկեղեցի
+              </p>
+              <a
+                href="[Եկեղեցու Google Maps Հասցե]"
+                target="_blank"
+                class="map-link"
+                >Տեսնել քարտեզի վրա</a
+              >
+            </div>
+          </div>
+
+          <div class="event-time restaurant">
+            <img
+              src="./rest.jpg"
+              alt="Grand Palace Ռեստորան"
+              class="event-image scroll-reveal"
+            />
+
+            <div class="details">
+              <h3 class="event-name">Տոնակատարություն</h3>
+              <p class="time-location">
+                Ժամը 19:30-ին, "Grand Palace" Ռեստորանային Համալիր
+              </p>
+              <a
+                href="[Ռեստորանի Google Maps Հասցե]"
+                target="_blank"
+                class="map-link"
+                >Տեսնել քարտեզի վրա</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="dress-code-box scroll-reveal">
+          <h2 class="dress-code-title">Դրես-կոդ</h2>
+
+          <p class="dress-code-text">
+            Հարգելի հյուրեր, մեզ համար հաճելի է ձեր ներկայությունը և մեր
+            ուրախությունը կիսելու ցանկությունը։ Եթե ցանկություն ունեք, կարող եք
+            հետևել մեր հարսանեկան դրես կոդին։
+          </p>
+
+          <div class="color-palette">
+            <h3>Խնդրում ենք խուսափել այս գույներից</h3>
+            <div class="color-swatch black" title="Սև"></div>
+            <div class="color-swatch white" title="Սպիտակ"></div>
+            <div class="color-swatch neon" title="Նեոնային Գույներ"></div>
+          </div>
+
+          <div class="dress-slider women-dress-code" id="women-slider">
+            <h3>Կանանց համար</h3>
+            <button class="slider-btn prev-btn-women">❮</button>
+            <button class="slider-btn next-btn-women">❯</button>
+
+            <div class="slider-display" id="women-display"></div>
+          </div>
+
+          <div class="dress-slider man-dress-code" id="man-slider">
+            <h3>Տղամարդկանց համար</h3>
+            <button class="slider-btn prev-btn-man">❮</button>
+            <button class="slider-btn next-btn-man">❯</button>
+
+            <div class="slider-display" id="man-display"></div>
+          </div>
+        </div>
+        <div class="demandes scroll-reveal">
+          <h2 class="demandes-title">Մի Քանի Փոքր Խնդրանք</h2>
+
+          <div class="demande-list">
+            <div class="demande-item">
+              <div class="icon-demande">📵</div>
+              <div class="text-demande">
+                <h3>Առանց Հեռախոսների (Unplugged)</h3>
+                <p>
+                  Խնդրում ենք, պսակադրության ժամանակ անջատեք հեռախոսները։ Թույլ
+                  տվեք, որ մեր լուսանկարիչը որսա այդ պահերը։
+                </p>
+              </div>
+            </div>
+
+            <div class="demande-item">
+              <div class="icon-demande">👶</div>
+              <div class="text-demande">
+                <h3>Երեխաների Հսկողություն</h3>
+                <p>
+                  Մեծ սիրով ընդունում ենք Ձեր փոքրիկներին, բայց խնդրում ենք
+                  հատուկ ուշադրություն դարձնել նրանց՝ հարսանեկան պարերի ժամանակ:
+                </p>
+              </div>
+            </div>
+
+            <div class="demande-item">
+              <div class="icon-demande">🎁</div>
+              <div class="text-demande">
+                <h3>Նվերների Ընտրություն</h3>
+                <p>
+                  Մեր ամենամեծ նվերը Ձեր ներկայությունն է։ Եթե ցանկանում եք
+                  նվիրել, նախընտրում ենք ծրարով նվերներ՝ ապագա ծրագրերի համար:
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="harcatertik scroll-reveal">
+          <h2 class="harcatertik-title">Մասնակցության Հաստատում (RSVP)</h2>
+
+          <p class="rsvp-note">
+            Խնդրում ենք, հաստատեք Ձեր ներկայությունը մինչև **սեպտեմբերի 30-ը**։
+          </p>
+
+          <form
+            class="rsvp-form"
+            action="[Ավելացրեք Ձեր Ֆորմայի Հասցեն Այստեղ]"
+            method="POST"
+          >
+            <div class="form-group">
+              <label for="full-name">Անուն, Ազգանուն *</label>
+              <input type="text" id="full-name" name="full-name" required />
+            </div>
+
+            <div class="form-group">
+              <label>Հրավերը Ում Կողմից է *</label>
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="groom"
+                  name="invited-by"
+                  value="Tigran"
+                  required
+                />
+                <label for="groom">Փեսայի (Տիգրան)</label>
+
+                <input
+                  type="radio"
+                  id="bride"
+                  name="invited-by"
+                  value="Anahit"
+                />
+                <label for="bride">Հարսի (Անահիտ)</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Կարո՞ղ եք ներկա գտնվել *</label>
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="attending-yes"
+                  name="attending"
+                  value="yes"
+                  required
+                />
+                <label for="attending-yes">Այո, կմասնակցեմ</label>
+
+                <input
+                  type="radio"
+                  id="attending-no"
+                  name="attending"
+                  value="no"
+                />
+                <label for="attending-no">Ցավոք, ոչ</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="notes"
+                >Մեկնաբանություն/Հատուկ նշումներ (օրինակ՝ սննդային
+                ալերգիա)</label
+              >
+              <textarea id="notes" name="notes" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              Հաստատել Մասնակցությունը
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+</div> <footer class="main-footer">
+        <div class="footer-content">
+            <p class="copyright">
+                &copy; <span id="current-year">2025</span> Տիգրան և Անահիտ: Բոլոր իրավունքները պաշտպանված են:
+            </p>
+            
+            <div class="social-links">
+                <a href="[Փեսայի Instagram-ի Հասցեն]" target="_blank" class="social-icon">📷</a>
+                <a href="[Հարսի Instagram-ի Հասցեն]" target="_blank" class="social-icon">🤍</a>
+                <a href="[Հարսանեկան Հեշթեգը]" target="_blank" class="social-icon">#</a>
+            </div>
+            
+            <p class="designer-note">
+                Դիզայնը պատրաստված է սիրով:
+            </p>
+        </div>
+    </footer>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
