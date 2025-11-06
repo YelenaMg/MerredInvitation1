@@ -171,80 +171,96 @@
           </div>
         </div>
 
-        <div class="harcatertik scroll-reveal">
-          <h2 class="harcatertik-title">Մասնակցության Հաստատում (RSVP)</h2>
+       <input type="hidden" name="form-name" value="RSVP-Form" />
+    <div style="display: none;">
+        <label>
+            Don’t fill this out if you're human: <input name="bot-field" />
+        </label>
+    </div>
+ 
+<div class="harcatertik scroll-reveal">
+    <h2 class="harcatertik-title">Մասնակցության Հաստատում (RSVP)</h2>
 
-          <p class="rsvp-note">
-            Խնդրում ենք, հաստատեք Ձեր ներկայությունը մինչև **սեպտեմբերի 30-ը**։
-          </p>
+    <p class="rsvp-note">
+        Խնդրում ենք, հաստատեք Ձեր ներկայությունը մինչև **սեպտեմբերի 30-ը**։
+    </p>
 
-          <form
-            class="rsvp-form"
-            action="[Ավելացրեք Ձեր Ֆորմայի Հասցեն Այստեղ]"
-            method="POST"
-          >
-            <div class="form-group">
-              <label for="full-name">Անուն, Ազգանուն *</label>
-              <input type="text" id="full-name" name="full-name" required />
-            </div>
+    <form
+        name="RSVP-Form" 
+        method="POST" 
+        data-netlify="true" 
+        netlify-honeypot="bot-field" 
+        class="rsvp-form"
+    >
+        <input type="hidden" name="form-name" value="RSVP-Form" />
+        <div style="display: none;">
+            <label>
+                Don’t fill this out if you're human: <input name="bot-field" />
+            </label>
+        </div>
+        
+        <div class="form-group">
+            <label for="full-name">Անուն, Ազգանուն *</label>
+            <input type="text" id="full-name" name="Անուն" required />
+        </div>
 
-            <div class="form-group">
-              <label>Հրավերը Ում Կողմից է *</label>
-              <div class="radio-group">
+        <div class="form-group">
+            <label>Հրավերը Ում Կողմից է *</label>
+            <div class="radio-group">
                 <input
-                  type="radio"
-                  id="groom"
-                  name="invited-by"
-                  value="Tigran"
-                  required
+                    type="radio"
+                    id="groom"
+                    name="Հրավիրող"
+                    value="Tigran"
+                    required
                 />
                 <label for="groom">Փեսայի (Տիգրան)</label>
 
                 <input
-                  type="radio"
-                  id="bride"
-                  name="invited-by"
-                  value="Anahit"
+                    type="radio"
+                    id="bride"
+                    name="Հրավիրող"
+                    value="Anahit"
                 />
                 <label for="bride">Հարսի (Անահիտ)</label>
-              </div>
             </div>
+        </div>
 
-            <div class="form-group">
-              <label>Կարո՞ղ եք ներկա գտնվել *</label>
-              <div class="radio-group">
+        <div class="form-group">
+            <label>Կարո՞ղ եք ներկա գտնվել *</label>
+            <div class="radio-group">
                 <input
-                  type="radio"
-                  id="attending-yes"
-                  name="attending"
-                  value="yes"
-                  required
+                    type="radio"
+                    id="attending-yes"
+                    name="Մասնակցություն"
+                    value="Այո"
+                    required
                 />
                 <label for="attending-yes">Այո, կմասնակցեմ</label>
 
                 <input
-                  type="radio"
-                  id="attending-no"
-                  name="attending"
-                  value="no"
+                    type="radio"
+                    id="attending-no"
+                    name="Մասնակցություն"
+                    value="Ոչ"
                 />
                 <label for="attending-no">Ցավոք, ոչ</label>
-              </div>
             </div>
+        </div>
 
-            <div class="form-group">
-              <label for="notes"
+        <div class="form-group">
+            <label for="notes"
                 >Մեկնաբանություն/Հատուկ նշումներ (օրինակ՝ սննդային
                 ալերգիա)</label
-              >
-              <textarea id="notes" name="notes" rows="3"></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn">
-              Հաստատել Մասնակցությունը
-            </button>
-          </form>
+            >
+            <textarea id="notes" name="Նշումներ" rows="3"></textarea>
         </div>
+
+        <button type="submit" class="submit-btn">
+            Հաստատել Մասնակցությունը
+        </button>
+    </form>
+</div>
       </div>
     </div>
     
