@@ -134,7 +134,7 @@ p {
     /* Թաքցնելու համար այն ամենը, ինչ դուրս է գալիս բոքսից */
 
     /* ՖՈՆԱՅԻՆ ՆԿԱՐԻ ՍԿԶԲՆԱԿԱՆ ՈՃԵՐԸ */
-    background-image: url('./couple-1.jpg');
+    background-image: url('./couple-3.jpg');
     /* Սկզբնական նկար */
     background-size: cover;
     background-position: center;
@@ -805,4 +805,56 @@ p {
     /* Մեծանում է hover-ի ժամանակ */
     color: #fffaf0;
     /* Բաց գույն */
+}
+
+.animated-date-pulse {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Տարածություն վազող թվերից */
+}
+
+.animated-date-pulse p {
+    padding-top: 30px;
+    font-family: inherit;
+    color: #697e89; /* Տոնական վարդագույն */
+    font-size: 2vw; /* Շատ ավելի մեծ */
+    font-weight: 700; /* Թավ */
+    letter-spacing: 3px;
+    text-shadow: 0 0 5px rgba(233, 30, 99, 0.5); /* Փոքրիկ փայլ */
+    
+    /* ԱՆԻՄԱՑԻԱՅԻ ԿԻՐԱՌՈՒՄ */
+    animation: festive-pulse 2s ease-in-out infinite; 
+    /* 2s - 2 վայրկյան տևողություն, infinite - մշտական կրկնություն */
+    
+    /* Այս հատկությունները կանխում են տեսքի խեղաթյուրումը անիմացիայի ժամանակ */
+    transform-origin: center center;
+    display: inline-block;
+}
+
+/* Պատասխանողականություն (փոքր էկրանների համար) */
+@media (max-width: 600px) {
+    .animated-date-pulse p {
+        font-size: 22px;
+    }
+}
+
+
+
+/* -------------------------------------- */
+/* ԱՆԻՄԱՑԻԱՅԻ ԲԱԺԻՆԸ */
+/* -------------------------------------- */
+/* Կատարում է նուրբ "շնչառություն" (pulse) */
+@keyframes festive-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.85; /* Մի փոքր մուգ */
+    }
+    50% {
+        transform: scale(1.03); /* Մի փոքր մեծանում է */
+        opacity: 1; /* Լրիվ պայծառ */
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.85;
+    }
 }

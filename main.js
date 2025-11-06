@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ====================================================
 
     const images = [
-        './couple-1.jpg', './couple-2.jpg', './couple-3.jpg', './couple-4.jpg'
+       './couple-3.jpg' , './couple-2.jpg', './couple-1.jpg', './couple-4.jpg'
     ];
     const imgBox = document.querySelector('.img-box');
     const prevBtn = document.querySelector('.prev-btn');
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ՀԵՏՀԱՇՎԱՐԿԻ ՖՈՒՆԿՑԻՈՆԱԼՈՒԹՅՈՒՆԸ (Անփոփոխ)
     // ====================================================
 
-    const weddingDate = new Date("2026-10-30T18:00:00").getTime();
+    const weddingDate = new Date("2025-12-10T18:00:00").getTime();
     const daysEl = document.getElementById('days');
     const hoursEl = document.getElementById('hours');
     const minutesEl = document.getElementById('minutes');
