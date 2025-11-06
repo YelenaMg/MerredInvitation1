@@ -831,11 +831,9 @@ p {
     display: inline-block;
 }
 
-/* Պատասխանողականություն (փոքր էկրանների համար) */
-@media (max-width: 600px) {
-    .animated-date-pulse p {
-        font-size: 22px;
-    }
+.animated-date-pulse p img{
+    width: 1.9vw;
+    height: 1.9vw;
 }
 
 
