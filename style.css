@@ -183,7 +183,7 @@ p {
     transition: background-color 0.3s;
     /* ************************************************* */
     /* *** ՇՏԿՈՒՄ՝ ՀԵՌԱԽՈՍԻ ԿԱՊՈՒՅՏ ԸՆԴԳԾՈՒՄԻ ՀԱՄԱՐ *** */
-    -webkit-tap-highlight-color: transparent; 
+    -webkit-tap-highlight-color: transparent !important;
     /* ************************************************* */
 }
 
@@ -193,7 +193,15 @@ p {
     box-shadow: none;
 
 }
-
+/* ՄԻԱՎՈՐՎԱԾ ՇՏԿՈՒՄ ԲՈԼՈՐ ՎԻՃԱԿՆԵՐԻ ՀԱՄԱՐ */
+.slider-btn:focus, 
+.slider-btn:active, 
+.slider-btn:hover:active {
+    outline: none !important;
+    box-shadow: none !important;
+    /* Համոզվում ենք, որ տեսանելիության համար պատասխանատու գույնը նույնպես չի փոխվում, եթե դա պահանջվում է */
+    /* Օրինակ՝ կարող եք թողնել նույն background-ը, որը կա hover-ում կամ սովորական վիճակում */
+}
 
 .prev-btn {
     left: 10px;
