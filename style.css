@@ -768,9 +768,20 @@ p {
 
 /* Ռադիո Կոճակների Խումբ */
 .radio-group {
-    display: flex;
+    /* display: flex;
     gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
+    display: flex; /* Դնում է կետերը կողք կողքի մեծ էկրաններին */
+    gap: 20px; /* Տարածություն կետերի միջև */
+    flex-wrap: wrap; /* Թույլ է տալիս անցնել նոր տող, եթե տեղը չի հերիքում */
+    align-items: center;
+}
+@media (max-width: 600px) {
+    .radio-group {
+        flex-direction: column; /* Փոխում է ուղղությունը՝ դարձնելով ուղղահայաց */
+        align-items: flex-start; /* Դնում է բոլոր կետերը ձախ կողմում */
+        gap: 10px; /* Փոքրացնում է տարածությունը իրար տակ */
+    }
 }
 
 .radio-group label {
