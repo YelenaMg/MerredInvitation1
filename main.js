@@ -221,3 +221,34 @@ document.addEventListener('DOMContentLoaded', () => {
     setupDressCodeSlider(manImages, 'man-display', '.prev-btn-man', '.next-btn-man');
 
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Գտնում ենք երկու կոճակները
+    const nextBtn = document.querySelector('.next-btn');
+    const prevBtn = document.querySelector('.prev-btn');
+
+    // Ֆունկցիա՝ կոճակը սեղմելուց հետո ֆոկուսը հեռացնելու համար
+    function removeFocus(button) {
+        // .blur() մեթոդը հարկադրաբար հեռացնում է ֆոկուսը էլեմենտից
+        button.blur();
+    }
+
+    // Կցում ենք ֆունկցիան կոճակների սեղմման իրադարձությանը
+    nextBtn.addEventListener('click', (e) => {
+        // ... (Ձեր գոյություն ունեցող սլայդերի լոգիկան այստեղ է)
+        
+        // ՖՈԿՈՒՍԻ ՇՏԿՈՒՄ
+        removeFocus(e.currentTarget); // Կամ պարզապես nextBtn.blur();
+    });
+
+    prevBtn.addEventListener('click', (e) => {
+        // ... (Ձեր գոյություն ունեցող սլայդերի լոգիկան այստեղ է)
+        
+        // ՖՈԿՈՒՍԻ ՇՏԿՈՒՄ
+        removeFocus(e.currentTarget); // Կամ պարզապես prevBtn.blur();
+    });
+
+    // Եթե Դուք չունեք մնացած JavaScript լոգիկան, կարող եք պարզապես ավելացնել.
+    // nextBtn.addEventListener('click', (e) => { e.currentTarget.blur(); });
+    // prevBtn.addEventListener('click', (e) => { e.currentTarget.blur(); });
+});

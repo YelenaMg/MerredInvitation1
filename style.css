@@ -187,20 +187,36 @@ p {
     /* ************************************************* */
 }
 
-.slider-btn:focus {
-    outline: none;
 
-    box-shadow: none;
 
-}
-/* ՄԻԱՎՈՐՎԱԾ ՇՏԿՈՒՄ ԲՈԼՈՐ ՎԻՃԱԿՆԵՐԻ ՀԱՄԱՐ */
+
+/* 2. Համատեղել բոլոր ֆոկուս և ակտիվ վիճակները */
+/* Սա պետք է ուղղի կապույտ գիծը/քառակուսին */
 .slider-btn:focus, 
 .slider-btn:active, 
-.slider-btn:hover:active {
-    outline: none !important;
+.slider-btn:visited:focus, /* Ավելացվել է լրացուցիչ անվտանգության համար */
+.prev-btn:focus,
+.next-btn:focus,
+.prev-btn:active,
+.next-btn:active {
+    /* Բացարձակապես հեռացնել բրաուզերի ուրվագիծը */
+    outline: none !important; 
+    
+    /* Հեռացնել ցանկացած ստվեր */
     box-shadow: none !important;
-    /* Համոզվում ենք, որ տեսանելիության համար պատասխանատու գույնը նույնպես չի փոխվում, եթե դա պահանջվում է */
-    /* Օրինակ՝ կարող եք թողնել նույն background-ը, որը կա hover-ում կամ սովորական վիճակում */
+    
+    /* Վերականգնել ֆոնի գույնը՝ ապահովելով, որ այն կապույտ չլինի */
+    background: rgba(255, 255, 255, 0.4) !important; 
+    
+    /* Որոշ բրաուզերներ օգտագործում են border-ը նույնպես */
+    border: none !important;
+}
+
+/* 3. Հեռացնել լռելյայն ֆոկուսը HTML-ի ընդհանուր վիճակից */
+/* Սա աշխատում է հենց կտտոցի ժամանակ (ոչ թե ստեղնաշարի) */
+*:focus {
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
 }
 
 .prev-btn {
