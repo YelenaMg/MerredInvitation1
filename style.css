@@ -183,6 +183,12 @@ p {
     transition: background-color 0.3s;
 }
 
+.slider-btn:focus {
+    outline: none;
+
+    box-shadow: none;
+
+}
 
 
 .prev-btn {
@@ -195,17 +201,18 @@ p {
 
 .prev-btn:focus {
     /* outline: none-ը հեռացնում է բրաուզերի լռելյայն ընդգծումը */
-    outline: none; 
-    
+    outline: none;
+
     /* Կարող եք նաև հեռացնել ցանկացած box-shadow, որը կարող է մնալ */
-    box-shadow: none; 
+    box-shadow: none;
 }
+
 .next-btn:focus {
     /* outline: none-ը հեռացնում է բրաուզերի լռելյայն ընդգծումը */
-    outline: none; 
-    
+    outline: none;
+
     /* Կարող եք նաև հեռացնել ցանկացած box-shadow, որը կարող է մնալ */
-    box-shadow: none; 
+    box-shadow: none;
 }
 
 /* Փոխում ենք տեքստի գույնը սպիտակ ֆոնին համապատասխան */
@@ -807,8 +814,9 @@ p {
     transition: transform 0.2s;
 
 }
-.social-icon img{
-      width: 20px;
+
+.social-icon img {
+    width: 20px;
     height: 20px;
 }
 
@@ -822,28 +830,33 @@ p {
 .animated-date-pulse {
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 20px; /* Տարածություն վազող թվերից */
+    margin-bottom: 20px;
+    /* Տարածություն վազող թվերից */
 }
 
 .animated-date-pulse p {
     padding-top: 30px;
     font-family: inherit;
-    color: #697e89; /* Տոնական վարդագույն */
-    font-size: 2.5vw; /* Շատ ավելի մեծ */
-    font-weight: 700; /* Թավ */
+    color: #697e89;
+    /* Տոնական վարդագույն */
+    font-size: 2.5vw;
+    /* Շատ ավելի մեծ */
+    font-weight: 700;
+    /* Թավ */
     letter-spacing: 3px;
-    text-shadow: 0 0 5px rgba(233, 30, 99, 0.5); /* Փոքրիկ փայլ */
-    
+    text-shadow: 0 0 5px rgba(233, 30, 99, 0.5);
+    /* Փոքրիկ փայլ */
+
     /* ԱՆԻՄԱՑԻԱՅԻ ԿԻՐԱՌՈՒՄ */
-    animation: festive-pulse 2s ease-in-out infinite; 
+    animation: festive-pulse 2s ease-in-out infinite;
     /* 2s - 2 վայրկյան տևողություն, infinite - մշտական կրկնություն */
-    
+
     /* Այս հատկությունները կանխում են տեսքի խեղաթյուրումը անիմացիայի ժամանակ */
     transform-origin: center center;
     display: inline-block;
 }
 
-.animated-date-pulse p img{
+.animated-date-pulse p img {
     width: 2vw;
     height: 2vw;
 }
@@ -857,12 +870,17 @@ p {
 @keyframes festive-pulse {
     0% {
         transform: scale(1);
-        opacity: 0.85; /* Մի փոքր մուգ */
+        opacity: 0.85;
+        /* Մի փոքր մուգ */
     }
+
     50% {
-        transform: scale(1.03); /* Մի փոքր մեծանում է */
-        opacity: 1; /* Լրիվ պայծառ */
+        transform: scale(1.03);
+        /* Մի փոքր մեծանում է */
+        opacity: 1;
+        /* Լրիվ պայծառ */
     }
+
     100% {
         transform: scale(1);
         opacity: 0.85;
